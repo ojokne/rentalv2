@@ -1,0 +1,10 @@
+.action-button {
+    @include padding_margin($padding: 6px, $margin: 6px);
+    background-color: $primary-color;
+    border: none;
+    color: $tertiary-color;
+}
+
+.action-button:hover {
+    transform: scale(.95);
+}

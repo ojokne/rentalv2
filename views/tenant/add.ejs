@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/links') %>
+        <title>Add | tenant</title>
+</head>
+
+<body>
+    <div class="side">
+        <%- include('../partials/side') %>
+    </div>
+    <div class="main">
+        <h1>Rental Management System</h1>
+        <% if (success && success.length) { %>
+            <div class="alert alert-success">
+                <p>
+                    <%= success %>
+                </p>
+                <p class="close"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <% } %>
+                <% if (failure && failure.length) { %>
+                    <div class="alert alert-failure">
+                        <p>
+                            <%= failure %>
+                        </p>
+                        <p class="close"><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                    <% } %>
+                        <form action="/tenant/add" method="POST">
+                            <fieldset>
+                                <legend>Add</legend>
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" name="firstName" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" id="lastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <p>Gender</p>
+                                    <div class="radio">
+                                        <input type="radio" name="gender" id="male" value="M" readonly>
+                                        <label for="male">Male</label>
+                                        <input type="radio" name="gender" id="female" value="F" required>
+                                        <label for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" name="dob" id="dob" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobileNumber">Mobile Number</label>
+                                    <input type="text" name="mobileNumber" id="mobileNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="whatsAppNumber">WhatsApp Number</label>
+                                    <input type="text" name="whatsAppNumber" id="whatsAppNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Addres or work place</label>
+                                    <input type="text" name="address" id="address" required>
+                                </div>
+                                <div class="form-group-button">
+                                    <input type="submit" value="Add">
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="center">
+                            <a href="/tenant/view"><button class="action-button">View Tenants</button></a>
+                        </div>
+    </div>
+</body>
+<%- include('../partials/footer') %>
+
+</html>

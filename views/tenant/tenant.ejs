@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/links') %>
+        <title>Add | tenant</title>
+</head>
+
+<body>
+    <div class="side">
+        <%- include('../partials/side') %>
+    </div>
+    <div class="main">
+        <h1>Rental Management System</h1>
+        <% if (success && success.length) { %>
+            <div class="alert alert-success">
+                <p>
+                    <%= success %>
+                </p>
+                <p class="close"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <% } %>
+                <% if (failure && failure.length) { %>
+                    <div class="alert alert-failure">
+                        <p>
+                            <%= failure %>
+                        </p>
+                        <p class="close"><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                    <% } %>
+                        <% if (tenant) { %>
+                            <div class="tenant-detail center">
+
+                                <h2>
+                                    <%= tenant.firstName %>
+                                        <%= tenant.lastName %>
+                                </h2>
+                                <div class="tenant-card">
+                                    <div class="card">
+                                        <span>Gender</span>
+                                        <span>
+                                            <%= tenant.gender %>
+                                        </span>
+                                    </div>
+                                    <div class="card">
+                                        <span>Date of birth</span>
+                                        <span>
+                                            <%= tenant.dob %>
+                                        </span>
+                                    </div>
+                                    <div class="card">
+                                        <span>Mobile Number</span>
+                                        <span>
+                                            <%= tenant.mobileNumber %>
+                                        </span>
+                                    </div>
+                                    <div class="card">
+                                        <span>WhatsApp Number</span>
+                                        <span>
+                                            <%= tenant.whatsAppNumber %>
+                                        </span>
+                                    </div>
+                                    <div class="card">
+                                        <span>Workplace/Address
+                                        </span>
+                                        <span>
+                                            <%= tenant.address %>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="center">
+                                <a href="/tenant/update/<%= tenant.id %>"><button class="action-button">Update
+                                        Details</button></a>
+                                <a href='/tenant/delete/<%= tenant.id %> '><button
+                                        class="action-button">Delete</button></a>
+
+                            </div>
+                            <% } %>
+    </div>
+</body>
+<%- include('../partials/footer') %>
+
+</html>

@@ -1,0 +1,31 @@
+.alert {
+    @include padding_margin($padding: 12px, $margin: 12px);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 500px;
+    margin: auto;
+    border: none;
+    color: $tertiary-color;
+}
+
+.alert-success {
+    background-color: $alert-success;
+}
+
+.alert-failure {
+    background-color: $alert-failure;
+}
+
+.alert-info {
+    background-color: $alert-info;
+}
+
+.close {
+    font-size: 20px;
+}
+
+.close:hover {
+    transform: scale(.95);
+}

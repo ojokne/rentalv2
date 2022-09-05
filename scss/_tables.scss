@@ -1,0 +1,19 @@
+.tenant-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table,
+tr,
+th,
+td {
+    border: 1px solid $primary-color;
+    border-collapse: collapse;
+    @include padding_margin;
+}
+
+tr:nth-child(even) {
+    background-color: $tertiary-color;
+}

@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'mixins';
+@import 'containers';
+@import 'forms';
+@import 'alert';
+@import 'button';
+@import 'tables';
+@import 'tenant';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    @include padding_margin;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}

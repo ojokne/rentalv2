@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/links') %>
+        <title>View | tenants</title>
+</head>
+
+<body>
+    <div class="side">
+        <%- include('../partials/side') %>
+    </div>
+
+    <div class="main">
+        <h1>Rental Management System</h1>
+        <% if (success && success.length) { %>
+            <div class="alert alert-success">
+                <p>
+                    <%= success %>
+                </p>
+                <p class="close"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <% } %>
+                <% if (failure && failure.length) { %>
+                    <div class="alert alert-failure">
+                        <p>
+                            <%= failure %>
+                        </p>
+                        <p class="close"><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                    <% } %>
+                        <% if (tenants && tenants.length) { %>
+                            <div class="tenant-table">
+                                <table>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>First Name</td>
+                                        <td>Last Name</td>
+                                        <td>Action</td>
+                                    </tr>
+                                    <% for( let i=0; i < tenants.length; i++ ) { %>
+                                        <tr>
+                                            <td>
+                                                <%= (i+1) %>
+                                            </td>
+
+                                            <td>
+                                                <%= tenants[i].firstName %>
+                                            </td>
+                                            <td>
+                                                <%= tenants[i].lastName %>
+                                            </td>
+
+                                            <td>
+                                                <a href='/tenant/view/<%= tenants[i].id %> '><button
+                                                        class="action-button">View</button></a>
+                                                <a href='/tenant/delete/<%= tenants[i].id %> '><button
+                                                        class="action-button">Delete</button></a>
+                                                <a href='/tenant/update/<%= tenants[i].id %> '><button
+                                                        class="action-button">Update</button></a>
+
+                                            </td>
+
+                                        </tr>
+                                        <% } %>
+                                </table>
+                            </div>
+                            <%} else { %>
+                                <div class="center">
+                                    <h2>Currently there are no tenants, please add</h2>
+                                </div>
+                                <% } %>
+                                    <div class="center">
+
+                                        <a href="/tenant/add"><button class="action-button">Add Tenant</button></a>
+                                    </div>
+    </div>
+</body>
+<%- include('../partials/footer') %>
+
+</html>

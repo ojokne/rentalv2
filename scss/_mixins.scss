@@ -1,0 +1,11 @@
+@mixin padding_margin($padding: 12px, $margin: 12px) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin boxmodel($border-color: $primary-color, $border-width: 1px, $border-radius: 6px) {
+    border-width: $border-width;
+    border-radius: $border-radius;
+    border-color: $primary-color;
+    outline: none;
+}

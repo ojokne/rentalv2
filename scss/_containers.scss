@@ -1,0 +1,46 @@
+.side {
+    position: fixed;
+    left: 0;
+    background-color: $primary-color;
+    width: 250px;
+    height: 100%;
+    color: $tertiary-color;
+
+    li {
+        list-style-type: none;
+    }
+
+    .list-text {
+        @include padding_margin;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .list-menu {
+        li {
+            // @include padding_margin($padding: 5px, $margin: 12px);
+        }
+
+        a {
+            text-decoration: none;
+            color: $tertiary-color;
+        }
+    }
+
+    // #####################################
+    .list {
+        @include padding_margin;
+
+        a {
+            color: $primary-hover-color;
+        }
+    }
+}
+
+.main {
+    margin-left: 250px;
+    background-color: $secondary-color;
+    width: 900px;
+    padding: 12px;
+    height: 100%;
+}

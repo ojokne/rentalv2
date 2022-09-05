@@ -1,0 +1,17 @@
+.tenant-card {
+    border-left: 3px solid $primary-color;
+    @include padding_margin($padding: 6px, $margin: 6px);
+
+    .card {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        // @include padding_margin;
+
+        span {
+            display: inline-block;
+            padding: 3px;
+            margin: 3px;
+        }
+    }
+}
